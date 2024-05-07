@@ -1,10 +1,12 @@
+import com.google.gson.Gson;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class Main {
+public class ConsumiendoApi {
     public static void main(String[] args) throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
@@ -12,8 +14,10 @@ public class Main {
                 .build();
         HttpResponse<String> response = client
                 .send(request, HttpResponse.BodyHandlers.ofString());
-
+        String json = response.body();
         System.out.println(response.body());
 
+            Gson gson = new Gson();
+//            gson.fromJson(json)
     }
 }
