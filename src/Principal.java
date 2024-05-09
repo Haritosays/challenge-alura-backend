@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) throws IOException, InterruptedException {
+        Scanner teclado = new Scanner(System.in);
         double valorParaConvertir = 0;
         double valorConvertido = 0;
         int salir = 0;
@@ -21,7 +22,6 @@ public class Principal {
         String menuSecundario = "Ingrese el valor que deseas convertir";
         String resultadoMenuConvertor = """
                 El valor %s [%s] correspende al valor final de =>> %s [%s]""";
-        Scanner teclado = new Scanner(System.in);
 
         while (salir != 7){
             System.out.println(menuPrincipal);
